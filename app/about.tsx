@@ -5,7 +5,7 @@ import StyledLink from './components/StyledLink'
 
 const containerStyle = {
   flex: 1,
-  backgroundColor: '$accent',
+  backgroundColor: '#000',
   alignItems: 'center',
   justifyContent: 'center',
 }
