@@ -5,7 +5,7 @@ __metadata:
   version: 8
   cacheKey: 10
 
-"@0no-co/graphql.web@npm:^1.0.1":
+"@0no-co/graphql.web@npm:^1.0.1, @0no-co/graphql.web@npm:^1.0.4":
   version: 1.0.4
   resolution: "@0no-co/graphql.web@npm:1.0.4"
   peerDependencies:
@@ -14,6 +14,15 @@ __metadata:
     graphql:
       optional: true
   checksum: 10/cec66187831da456a423727aa791a9411098657d85262425ec0e84fab3dab13c848bd74986ab29a3f19bc24458f344d17a3c37a9d36ae3c2bc2d896d1727a89c
+  languageName: node
+  linkType: hard
+
+"@0no-co/graphqlsp@npm:^1.4.2":
+  version: 1.4.2
+  resolution: "@0no-co/graphqlsp@npm:1.4.2"
+  dependencies:
+    node-fetch: "npm:^2.0.0"
+  checksum: 10/879125d98e40eb9bd4bb5d7d61145f8cb2c2518769c451ad67854a3e121f919b5755195b95c465281c60d0a110f2ed064476a4cd86066e0c48f6b10d30292988
   languageName: node
   linkType: hard
 
@@ -3098,6 +3107,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@shopify/flash-list@npm:^1.6.3":
+  version: 1.6.3
+  resolution: "@shopify/flash-list@npm:1.6.3"
+  dependencies:
+    recyclerlistview: "npm:4.2.0"
+    tslib: "npm:2.4.0"
+  peerDependencies:
+    "@babel/runtime": "*"
+    react: "*"
+    react-native: "*"
+  checksum: 10/b2c272b447cc528676eac0dfbcb9aead756bb00e9bfda93fc9e3886f93d4cb39fa9fa2d16a3077a86b18dfafc6a67a0e2c4b5917ea5b1efea9e63f485688cb51
+  languageName: node
+  linkType: hard
+
 "@sideway/address@npm:^4.1.5":
   version: 4.1.5
   resolution: "@sideway/address@npm:4.1.5"
@@ -3651,6 +3674,16 @@ __metadata:
     "@0no-co/graphql.web": "npm:^1.0.1"
     wonka: "npm:^6.3.2"
   checksum: 10/81cefc7f7af9df8cdc2df7b810ba770c75378050cbf6b53883edfc94a848f538e4aca6cc3e2cf422e10fb66d49c0f67b507b4e554874944bbc9086ae784f1ebf
+  languageName: node
+  linkType: hard
+
+"@urql/core@npm:^4.2.0":
+  version: 4.3.0
+  resolution: "@urql/core@npm:4.3.0"
+  dependencies:
+    "@0no-co/graphql.web": "npm:^1.0.1"
+    wonka: "npm:^6.3.2"
+  checksum: 10/3c0d4266cdc74a46cce272e053761618d47008f0c726b6e3f7ffe07e885ca744a13751838f9e6b11cb88827657d03d0ee33ce89c0974aff12f5d0cf4dd058155
   languageName: node
   linkType: hard
 
@@ -6823,9 +6856,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "expo-starter@workspace:."
   dependencies:
+    "@0no-co/graphqlsp": "npm:^1.4.2"
     "@babel/core": "npm:^7.20.0"
     "@expo/metro-runtime": "npm:~3.1.3"
     "@expo/webpack-config": "npm:^19.0.1"
+    "@shopify/flash-list": "npm:^1.6.3"
     "@types/react": "npm:~18.2.45"
     dripsy: "npm:^4.3.5"
     eslint: "npm:^8.56.0"
@@ -6836,6 +6871,7 @@ __metadata:
     expo-navigation-bar: "npm:^2.8.1"
     expo-router: "npm:~3.4.7"
     expo-status-bar: "npm:~1.11.1"
+    gql.tada: "npm:^1.2.1"
     prettier: "npm:^3.2.5"
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
@@ -6844,6 +6880,7 @@ __metadata:
     react-native-screens: "npm:~3.29.0"
     react-native-web: "npm:~0.19.6"
     typescript: "npm:^5.1.3"
+    urql: "npm:^4.0.6"
   languageName: unknown
   linkType: soft
 
@@ -7615,6 +7652,15 @@ __metadata:
   dependencies:
     get-intrinsic: "npm:^1.1.3"
   checksum: 10/5fbc7ad57b368ae4cd2f41214bd947b045c1a4be2f194a7be1778d71f8af9dbf4004221f3b6f23e30820eb0d052b4f819fe6ebe8221e2a3c6f0ee4ef173421ca
+  languageName: node
+  linkType: hard
+
+"gql.tada@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "gql.tada@npm:1.2.1"
+  dependencies:
+    "@0no-co/graphql.web": "npm:^1.0.4"
+  checksum: 10/48e445565a8c758e5c6f8e608dc97cae98b8b68842dd4287bdcd69b8ae46b96d3ab9ae43013c1dbd335bb7c03a687710ad17244a54eb0a6cffaff35554f6c747
   languageName: node
   linkType: hard
 
@@ -9190,7 +9236,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.debounce@npm:^4.0.8":
+"lodash.debounce@npm:4.0.8, lodash.debounce@npm:^4.0.8":
   version: 4.0.8
   resolution: "lodash.debounce@npm:4.0.8"
   checksum: 10/cd0b2819786e6e80cb9f5cda26b1a8fc073daaf04e48d4cb462fa4663ec9adb3a5387aa22d7129e48eed1afa05b482e2a6b79bfc99b86886364449500cbb00fd
@@ -10056,7 +10102,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.2.0, node-fetch@npm:^2.6.0, node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.12, node-fetch@npm:^2.6.7":
+"node-fetch@npm:^2.0.0, node-fetch@npm:^2.2.0, node-fetch@npm:^2.6.0, node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.12, node-fetch@npm:^2.6.7":
   version: 2.7.0
   resolution: "node-fetch@npm:2.7.0"
   dependencies:
@@ -11285,7 +11331,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
+"prop-types@npm:15.8.1, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -11657,6 +11703,20 @@ __metadata:
     source-map: "npm:~0.6.1"
     tslib: "npm:^2.0.1"
   checksum: 10/b41da2bcf7e705511db2f27d17420ace027de8dd167de9f19190d4988a1f80d112f60c095101ac2f145c8657ddde0c5133eb71df20504efaf3fd9d76ad07e15d
+  languageName: node
+  linkType: hard
+
+"recyclerlistview@npm:4.2.0":
+  version: 4.2.0
+  resolution: "recyclerlistview@npm:4.2.0"
+  dependencies:
+    lodash.debounce: "npm:4.0.8"
+    prop-types: "npm:15.8.1"
+    ts-object-utils: "npm:0.0.5"
+  peerDependencies:
+    react: ">= 15.2.1"
+    react-native: ">= 0.30.0"
+  checksum: 10/84c2fc1ee7d109e21ca30813f646a5d490a33fa789d1fb3f7f7854c191895de010109563ba1c67a35ec28340a872a039ceb6233a57053480098c48205fc147e9
   languageName: node
   linkType: hard
 
@@ -13276,6 +13336,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ts-object-utils@npm:0.0.5":
+  version: 0.0.5
+  resolution: "ts-object-utils@npm:0.0.5"
+  checksum: 10/83c48fbdaba392fb2c01cea53b267ed5538d2bb44fc6c3eecc10bcfabc1780bfa6ec8569b52bbf0140d9b521d9049d5f15884e12286918244d463d854dbc73cb
+  languageName: node
+  linkType: hard
+
 "ts-toolbelt@npm:^9.6.0":
   version: 9.6.0
   resolution: "ts-toolbelt@npm:9.6.0"
@@ -13292,6 +13359,13 @@ __metadata:
     minimist: "npm:^1.2.6"
     strip-bom: "npm:^3.0.0"
   checksum: 10/2041beaedc6c271fc3bedd12e0da0cc553e65d030d4ff26044b771fac5752d0460944c0b5e680f670c2868c95c664a256cec960ae528888db6ded83524e33a14
+  languageName: node
+  linkType: hard
+
+"tslib@npm:2.4.0":
+  version: 2.4.0
+  resolution: "tslib@npm:2.4.0"
+  checksum: 10/d8379e68b36caf082c1905ec25d17df8261e1d68ddc1abfd6c91158a064f6e4402039ae7c02cf4c81d12e3a2a2c7cd8ea2f57b233eb80136a2e3e7279daf2911
   languageName: node
   linkType: hard
 
@@ -13611,6 +13685,18 @@ __metadata:
   version: 4.0.0
   resolution: "url-join@npm:4.0.0"
   checksum: 10/b7d167149bb21fb569e84160e7b551b994d58bea38a69663de510ae1db868f70fa5d37e1acdcc42d71f3837144a8880b6b96ca096c4c8c384eabc92ccf88a962
+  languageName: node
+  linkType: hard
+
+"urql@npm:^4.0.6":
+  version: 4.0.6
+  resolution: "urql@npm:4.0.6"
+  dependencies:
+    "@urql/core": "npm:^4.2.0"
+    wonka: "npm:^6.3.2"
+  peerDependencies:
+    react: ">= 16.8.0"
+  checksum: 10/e2afc255cfab1bf5b358fcc3ce0600d37b68f7d5d5f333974c6e0d42abde68d1fb9f16bec09283b3d0838c0e8e8b3f8cf40c5645f6f26353a86a9ab1f899dcba
   languageName: node
   linkType: hard
 
