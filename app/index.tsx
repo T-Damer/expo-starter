@@ -17,7 +17,7 @@ export default function Home() {
       <Text sx={{ color: '$accent', fontWeight: '700', fontSize: 24 }}>
         Welcome to the starter app 💛
       </Text>
-      <StyledLink href="/about">About</StyledLink>
+      <StyledLink href="/about">Go to main page</StyledLink>
     </View>
   )
 }
