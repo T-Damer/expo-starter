@@ -1,5 +1,5 @@
-import { useQuery } from 'urql'
 import { graphql } from 'gql.tada'
+import { useQuery } from 'urql'
 
 const stringQuery = `
   query FeedPosts {

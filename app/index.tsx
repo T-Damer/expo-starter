@@ -2,8 +2,6 @@ import { Text, View } from 'dripsy'
 import { StatusBar } from 'expo-status-bar'
 
 import StyledLink from './components/StyledLink'
-import { Provider } from 'urql'
-import urqlClient from './helpers/urqlClient'
 
 export default function Home() {
   return (

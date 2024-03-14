@@ -1,11 +1,12 @@
+import { FlashList, ListRenderItemInfo } from '@shopify/flash-list'
 import { View, Text } from 'dripsy'
 import { StatusBar } from 'expo-status-bar'
+import { Dimensions } from 'react-native'
+import { Provider } from 'urql'
+
 import StyledLink from './components/StyledLink'
-import { Provider, gql, useQuery } from 'urql'
 import usePosts from './helpers/queries/uesPosts'
 import urqlClient from './helpers/urqlClient'
-import { FlashList, ListRenderItemInfo } from '@shopify/flash-list'
-import { Dimensions } from 'react-native'
 
 const containerStyle = {
   flex: 1,
