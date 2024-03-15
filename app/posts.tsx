@@ -1,32 +1,36 @@
 import { FlashList, ListRenderItemInfo } from '@shopify/flash-list'
-import { View, Text } from 'dripsy'
+import { View, Text, useSx, TextInput } from 'dripsy'
 import { StatusBar } from 'expo-status-bar'
-import { Dimensions } from 'react-native'
-import { Provider } from 'urql'
+import { useState } from 'react'
+import { Button, Dimensions } from 'react-native'
 
-import StyledLink from './components/StyledLink'
-import usePosts from './helpers/queries/uesPosts'
-import urqlClient from './helpers/urqlClient'
-
-const containerStyle = {
-  flex: 1,
-  backgroundColor: '#000',
-  alignItems: 'center',
-  justifyContent: 'center',
-}
+import StyledLink from '../src/components/StyledLink'
+import usePosts from '../src/helpers/queries/usePosts'
 
 const FeedPost = ({
   item: { title, id },
 }: ListRenderItemInfo<{ title: string; id: string }>) => {
   return (
     <View sx={{ flexDirection: 'row', justifyContent: 'center' }}>
-      {title}-{id}
+      <Text sx={{ color: 'white' }}>
+        {title}-{id}
+      </Text>
     </View>
   )
 }
 
-function Posts() {
-  const { data, fetching, error } = usePosts()
+export default function Posts() {
+  const sx = useSx()
+  const { data, fetching, error, refetch, addPost } = usePosts()
+  const [postText, setPostText] = useState('')
+
+  const containerStyle = sx({
+    flex: 1,
+    backgroundColor: '#000',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 16,
+  })
 
   if (fetching) return <p>Loading...</p>
   if (error) return <p>Oh no, an error: {error.message}</p>
@@ -43,18 +47,30 @@ function Posts() {
           height: Dimensions.get('window').height,
           width: Dimensions.get('window').width,
         }}
-        style={{ alignItems: 'center', justifyContent: 'center' }}
         data={data?.posts}
         renderItem={FeedPost}
+        estimatedItemSize={22}
+        onRefresh={refetch}
+        showsVerticalScrollIndicator={false}
+        refreshing={false}
+        ListEmptyComponent={<Text>Waiting for posts 🖨️</Text>}
+      />
+      <TextInput
+        sx={{
+          color: 'white',
+          borderColor: 'white',
+          borderStyle: 'solid',
+          borderWidth: '2px',
+        }}
+        value={postText}
+        onChangeText={setPostText}
+      />
+      <Button
+        onPress={() => {
+          setPostText('done')
+        }}
+        title="Add post"
       />
     </View>
-  )
-}
-
-export default function () {
-  return (
-    <Provider value={urqlClient}>
-      <Posts />
-    </Provider>
   )
 }

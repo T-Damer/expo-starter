@@ -3,10 +3,10 @@ import { makeTheme } from 'dripsy'
 export default makeTheme({
   colors: {
     $primary: '#8403fc',
+    $primaryDimmed: '#6102ba',
     $accent: '#ffcc33',
   },
   space: {
-    // recommended: set 0 first, then double for consistent nested spacing
     $0: 0,
     $1: 4,
     $2: 8,

@@ -2245,22 +2245,6 @@ export type introspection = {
             }
           },
           {
-            "name": "title",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            }
-          },
-          {
-            "name": "authorId",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            }
-          },
-          {
             "name": "AND",
             "type": {
               "kind": "LIST",
@@ -2303,6 +2287,14 @@ export type introspection = {
             }
           },
           {
+            "name": "title",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringFilter",
+              "ofType": null
+            }
+          },
+          {
             "name": "createdAt",
             "type": {
               "kind": "INPUT_OBJECT",
@@ -2323,6 +2315,14 @@ export type introspection = {
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "StringNullableFilter",
+              "ofType": null
+            }
+          },
+          {
+            "name": "authorId",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringFilter",
               "ofType": null
             }
           },

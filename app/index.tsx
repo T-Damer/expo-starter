@@ -1,7 +1,7 @@
 import { Text, View } from 'dripsy'
 import { StatusBar } from 'expo-status-bar'
 
-import StyledLink from './components/StyledLink'
+import StyledLink from '../src/components/StyledLink'
 
 export default function Home() {
   return (
@@ -18,6 +18,7 @@ export default function Home() {
         Welcome to the starter app 💛
       </Text>
       <StyledLink href="/posts">Go to posts page</StyledLink>
+      <StyledLink href="/login">Login or SignUp</StyledLink>
     </View>
   )
 }
