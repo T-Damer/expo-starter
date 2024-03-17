@@ -1,10 +1,11 @@
-import { Text, TextInput, View, useSx } from 'dripsy'
+import { Text, View } from 'dripsy'
 import { StatusBar } from 'expo-status-bar'
 import { graphql } from 'gql.tada'
 import { useEffect, useState } from 'react'
-import { Button } from 'react-native'
 import { useMutation } from 'urql'
 
+import StyledButton from '../src/components/StyledButton'
+import StyledInput from '../src/components/StyledInput'
 import StyledLink from '../src/components/StyledLink'
 
 const signUpMutation = graphql(`
@@ -27,14 +28,6 @@ export default function Login() {
     }
   }, [userToken])
 
-  const inputStyle = useSx()({
-    padding: 4,
-    borderWidth: 1,
-    color: 'white',
-    borderColor: 'white',
-    borderRadius: 4,
-  })
-
   return (
     <View
       sx={{
@@ -50,21 +43,17 @@ export default function Login() {
         Let's get started ⛳
       </Text>
 
-      <TextInput
+      <StyledInput
         value={email}
         onChangeText={setEmail}
         placeholder="email"
         textContentType="emailAddress"
-        sx={inputStyle}
-        placeholderTextColor="$primaryDimmed"
       />
-      <TextInput
+      <StyledInput
         value={password}
         onChangeText={setPassword}
         placeholder="pwd"
         textContentType="newPassword"
-        sx={inputStyle}
-        placeholderTextColor="$primaryDimmed"
         secureTextEntry
       />
 
@@ -75,11 +64,12 @@ export default function Login() {
           alignItems: 'center',
         }}
       >
-        <StyledLink href="/posts">Go back to posts</StyledLink>
-        <Button
+        <StyledLink>Go back</StyledLink>
+        <StyledButton
           onPress={() => signUpUser({ email, password, role: 'NORMAL' })}
-          title="Let's 🤘"
-        />
+        >
+          Let's 🤘
+        </StyledButton>
       </View>
     </View>
   )

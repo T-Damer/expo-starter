@@ -1,4 +1,5 @@
-import { Href, Link } from 'expo-router'
+import { useSx, Text } from 'dripsy'
+import { Href, Link, useNavigation } from 'expo-router'
 import { PropsWithChildren } from 'react'
 import { ColorValue } from 'react-native'
 
@@ -10,19 +11,25 @@ type StyledLinkProps = PropsWithChildren & {
 export default function StyledLink({
   children,
   color = '#fff',
-  href = '/',
+  href,
 }: StyledLinkProps) {
-  return (
-    <Link
-      href={href}
-      style={{
-        color,
-        textDecorationStyle: 'dotted',
-        textDecorationLine: 'underline',
-        fontWeight: '700',
-      }}
-    >
+  const { goBack } = useNavigation()
+  const sx = useSx()
+
+  const linkStyles = sx({
+    color,
+    textDecorationStyle: 'dotted',
+    textDecorationLine: 'underline',
+    fontWeight: '700',
+  })
+
+  return href ? (
+    <Link href={href} style={linkStyles}>
       {children}
     </Link>
+  ) : (
+    <Text sx={linkStyles} onPress={goBack}>
+      {children}
+    </Text>
   )
 }

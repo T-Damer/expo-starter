@@ -11,6 +11,7 @@ export default function Home() {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '$primary',
+        rowGap: 6,
       }}
     >
       <StatusBar style="light" />
