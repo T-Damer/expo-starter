@@ -67,6 +67,7 @@ export default function Login() {
         <StyledLink>Go back</StyledLink>
         <StyledButton
           onPress={() => signUpUser({ email, password, role: 'NORMAL' })}
+          disabled={!email || !password}
         >
           Let's 🤘
         </StyledButton>
